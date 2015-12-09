@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+a = []
+for a_i in range(n):
+   a_t = [int(a_temp) for a_temp in input().strip().split(' ')]
+   a.append(a_t)
+
+b = []
+c = []
+
+for j in range(n):
+    b.append(a[j][j]) #first \ cross
+    c.append(a[n-j-1][j]) #second / cross
+    
+
+print(sum(c[0:len(c)])-sum(b[0:len(b)]))

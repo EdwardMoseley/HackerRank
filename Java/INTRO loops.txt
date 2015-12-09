@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            int t = sc.nextInt(); //find t cases
+
+            for (int i=0; i<t; i++){
+
+                if (i != 0){
+
+                    System.out.print("\n");//carriage return could be placed elsewhere...
+
+                }
+
+            int a = sc.nextInt(); //grab these data from the input
+            int b = sc.nextInt();
+            int n = sc.nextInt();
+
+            //double sample = Math.pow(t,n-1);
+                for (int j=0; j<n; j++){//nest this loop
+                    
+                    double sample = Math.pow(2,j)*b;
+
+                    double results =+ sample;
+
+                    double final = a + (sample+results-b);
+                    
+                    
+                     // so as to equal the series...
+                    
+                    if (j == 0){ //here omit a space from the first element
+
+                    System.out.printf("%1.0f", final); // % 1.0f == " "*1 decimals = 0 for float in sample
+                 } else {
+
+                    System.out.printf("% 1.0f", final);
+                 }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+    import java.io.*;
+    import java.util.*;
+    import java.text.*;
+    import java.math.*;
+    import java.util.regex.*;
+
+    public class Solution {
+
+        public static void main(String[] args) {
+
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();            
+            String a = "Weird";
+            String b = "Not Weird";
+
+            boolean screen = (n % 2 != 0); //screen true if odd
+            
+            boolean sizeOne = (n >= 2 && n <= 5); //screen for size
+
+            boolean sizeTwo = (n >= 6 && n <= 20);
+
+            if (screen){
+
+            System.out.println(a);
+
+            } else if (!screen && sizeTwo){
+
+            System.out.println(a);
+
+            } else if (sizeOne){
+
+            System.out.println(b);
+
+            } else {
+
+            System.out.println(b);
+
+            }               
+      }
+}
