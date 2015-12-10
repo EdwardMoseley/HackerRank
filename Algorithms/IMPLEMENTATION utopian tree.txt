@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);//initialize scanner
+
+        int n = sc.nextInt();//grab number of cases
+
+        int[] cycles; //create an array
+
+        cycles = new int[n]; // make the array length n (number of cases)
+
+        for (int i = 0;i<n;i++){
+
+            int x = sc.nextInt();
+
+            cycles[i] = x;
+
+            int height = 1;
+            
+            for (int j = 1; j<=x; j++){//nested loop running math on elements of the array
+
+                if (j % 2 == 0 && j != 0){ //separate cycles (spring/summer)
+
+                    height = height + 1; //cycle one, height + 1
+
+                    } else {
+
+                    height = height*2; //cycle two, 2h
+
+                }    
+
+            }           
+
+            cycles[i] = height; //store the value
+              
+            System.out.println(cycles[i]); //print
+            
+        }
+    }
+}

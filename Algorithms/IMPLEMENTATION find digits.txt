@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); //grab test cases
+
+        int[] nums; // create an array
+
+        nums = new int[n]; // give the array a size
+
+        for (int i = 0; i<n; i++){ //loop through the remaining input
+            nums[i] = sc.nextInt(); //begin to fill the array
+            int a = nums[i]; //subset the integer
+            String str = Integer.toString(a); //convert to string
+            for (int j = 0; j<str.length(); j++){ //nested for loop to go through each character
+            System.out.println(str.charAt(j));
+            }
+         }        
+    }
+}
