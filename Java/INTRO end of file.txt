@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int i = 0; // initiate a counter
+
+        while (sc.hasNextLine()){ //while loop!
+
+            i = i + 1; // begin incrementing, question wants 1-indexed solution
+
+            System.out.println(i + " " + sc.nextLine()); //solve
+
+        }
+    }
+}

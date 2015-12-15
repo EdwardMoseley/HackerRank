@@ -4,20 +4,36 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt(); //grab test cases
 
-        int[] nums; // create an array
+        int[] nums; //create an array for holding the integers
 
-        nums = new int[n]; // give the array a size
+        nums = new int[n]; //give the array a size
 
         for (int i = 0; i<n; i++){ //loop through the remaining input
+
             nums[i] = sc.nextInt(); //begin to fill the array
+
             int a = nums[i]; //subset the integer
+
             String str = Integer.toString(a); //convert to string
+
+            //note Character.getNumericValue(str.charAt(j)); will return an integer
+            
             for (int j = 0; j<str.length(); j++){ //nested for loop to go through each character
-            System.out.println(str.charAt(j));
+
+                if (str.charAt(j) == '0'){//'' is for characters, "" is for strings
+
+                    System.out.println("Zero!");
+
+                    } else {
+
+                    System.out.println(nums[i]);
+                }
             }
-         }        
+        }        
     }
 }
