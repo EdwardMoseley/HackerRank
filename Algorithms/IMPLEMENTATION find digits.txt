@@ -1,23 +1,32 @@
 import java.io.*;
 import java.util.*;
+
 public class Solution {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); //grab test cases
         int[] nums; //create an array for holding the integers
-        nums = new int[n]; //give the array a size
+        int[] results; //create an array for holding the results
+        results = new int[n]; //give the array a size
+        nums = new int[n];
         for (int i = 0; i<n; i++){ //loop through the remaining input
             nums[i] = sc.nextInt(); //begin to fill the array
-            int digit = nums[i]; //subset the integer
-            String str = Integer.toString(digit); //convert to string
+            results[i] = 0;
+            String str = Integer.toString(nums[i]); //convert to string
             //note Character.getNumericValue(str.charAt(j)); will return an integer
-            
-            for (int j = 0; j<str.length(); j++){
+            for (int j = 0; j<str.length(); j++){ //loop through the digits of each integer
                 boolean nan = (str.charAt(j) == '0'); //'' is for characters, "" is for strings
                 if (!nan){ //boolean so as to avoid NaN issues from zeros
-                    System.out.println(digit);
-                 }
-           }
+                    if (nums[i] % Character.getNumericValue(str.charAt(j)) == 0){
+                    results[i] += 1;
+                    }
+                }
+                if (j == str.length()-1){
+                    System.out.println(results[i]);
+
+                }
+            }
         }        
     }
 }

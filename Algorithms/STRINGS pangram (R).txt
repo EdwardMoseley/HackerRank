@@ -1,0 +1,12 @@
+f <- file("stdin")#Read in input
+
+pangrams <- function(x){
+    dat <- unique(strsplit(tolower(gsub(' ', '', readLines(x))), '')[[1]])#read file, sub out spaces, convert to lower, split them, take only unique characters
+    if (all(letters %in% dat)){#check if the entire alphabet is represented
+    	return(cat("pangram"))#return results
+    	} else {
+    	return(cat("not pangram"))
+    }
+}
+
+pangrams(f)

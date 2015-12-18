@@ -1,95 +1,25 @@
 import java.util.*;
-
 import java.io.*;
-
 
 class Solution{
 
-    public static void main(String []argh)
-
-    {
-
-
+    public static void main(String []args){
         Scanner sc = new Scanner(System.in);
-
         int t=sc.nextInt();
-
-        double minInt = Math.pow(-2, -31);
-
-        double maxInt = Math.pow(2, 31)-1;
-
-        int mnInt = (int) (minInt);
-
-        int mxInt = (int) (maxInt);
-
         double minLong = Math.pow(-2,63);
-
         double maxLong = Math.pow(2,63)-1;
-
-        boolean a = false;
-
-        boolean b = false;
-
-
-
-
-        for(int i=0;i<t;i++)
-
-        {
-
-
-
-
-            try
-
-            {   
-
+        for(int i=0;i<t;i++){
+            try{   
                 long x=sc.nextLong();
-
-                int preZ = (int) (x);
-
-                int z = Math.abs(preZ);
-
                 System.out.println(x+" can be fitted in:");
-
-                if(x>=-128 && x<=127){
-
-                System.out.println("* byte");
-
-                    a = true;
-
-                }
-
-                if(x>=-32768 && x<= 32767){
-
-                    System.out.println("* short");
-
-                    b = true;
-
-                }
-
-                if(x<= mxInt && z>= mnInt)System.out.println("* int");
-
-                //Note: this prints on longs
-		//solve!
-                
-
+                if(x>=-128 && x<=127)System.out.println("* byte");
+                if(x>=-32768 && x<= 32767)System.out.println("* short");  
+                if(x<= Integer.MAX_VALUE && x>= Integer.MIN_VALUE)System.out.println("* int");
                 if(x>=minLong && x<= maxLong)System.out.println("* long");
-
-                
-
-            }
-
-            catch(Exception e)
-
-            {
-
+                }
+            catch(Exception e) {
                 System.out.println(sc.next()+" can't be fitted anywhere.");
-
             }
-
         }
-
     }
-
 }
