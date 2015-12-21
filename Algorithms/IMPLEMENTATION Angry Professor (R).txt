@@ -1,0 +1,32 @@
+f <- file("stdin")
+dat <- readLines(f)
+
+n <- as.numeric(dat[1])
+
+dat <- dat[2:length(dat)]
+
+iter <- 1
+
+while (iter <= n){
+    tmp <- list()
+    tmp <- strsplit(dat[1:2], " ")
+    count <- 0
+    for (i in 1:length(tmp[[2]])){
+        if(!is.na(tmp[[2]][i])){
+            if (as.numeric(tmp[[2]][i]) <= 0){
+                count <- count + 1
+            }
+        }    
+    }
+    if (!is.na(tmp[[1]][2])){
+        if (count >= as.numeric(tmp[[1]][2])){
+            cat("NO\n")
+            dat <- dat[3:length(dat)]
+            iter <- iter + 1
+            } else {
+            cat("YES\n")
+            dat <- dat[3:length(dat)]
+            iter <- iter + 1
+        }
+    }
+}
