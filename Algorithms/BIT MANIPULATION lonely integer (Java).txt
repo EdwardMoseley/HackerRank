@@ -6,21 +6,14 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr;
-        arr = new int[n];
+        int[] arr = new int[n];
+        Set<Integer> set = new HashSet<Integer>();//HashSets can only hold unique elements
         for(int i = 0; i<n; i++){
-            arr[i] = sc.nextInt();
-            System.out.println(arr[i]);
-        }
-        int j = 0;
-        while (j <= n){
-            int x = arr[j];
-            j +=1;
-            if (x == arr[j]){
-                System.out.println("Count");
-                } else {
-                System.out.println("noCount");
+            arr[i] = sc.nextInt(); //populate array
+            if (!set.add(arr[i])){ //if the integer cannot be added it is already represented
+                set.remove(arr[i]); //remove the duplicate
             }
         }
+        System.out.println(set.toString().replace("[", "").replace("]", ""));//return the set containing only the answer
     }
 }
