@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+        String hash = "#";
+        String space = " ";
+        String repHash = new String(new char[n]).replace("\0", hash);
+        String repSpace = new String(new char[n]).replace("\0", space);
+        for(int i=1;i<=n;i++){
+            System.out.print(repSpace.substring(0,n-i));
+            System.out.print(repHash.substring(0,i)+"\n");
+        }
+    }
+}
