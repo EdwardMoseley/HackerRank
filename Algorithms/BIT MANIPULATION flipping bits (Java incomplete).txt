@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); //Create scanner to accept standard input
+        StringBuilder sb = new StringBuilder(); //Create a stringbuilder object to recreate the 32-bit string
+        int n = sc.nextInt(); //Grab the number of cases
+        int[] arr = new int[n]; //create an array of length(number of cases)
+        String result; //create a string to hold the result
+        for (int i = 0; i<n; i++){
+             sb.delete(0, sb.length()); //initialize the stringbuilder object by emptying it
+             arr[i] = sc.nextInt(); //grab the first integer
+             result = Integer.toBinaryString(arr[i]); //convert it to a binary string
+             for (int j = 32-result.length(); j>0; j--){ //build a string of length (32-length(binary string))
+                sb.append('0'); //add zeroes to the beginning of the string
+                if (j == 1){ //once the zeroes have been added
+                    sb.append(result); //append the binary string
+                    System.out.println(sb); //print
+                }
+            }
+        }
+    }
+}
