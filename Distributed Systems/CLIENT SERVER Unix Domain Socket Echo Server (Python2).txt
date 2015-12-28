@@ -1,0 +1,22 @@
+#Note: Not my code
+#Code located at: https://github.com/alexanderscott/HackerRank/blob/master/DistributedSystems/uds-echo-server.py
+#Code located because Java doesn't seem to support Unix Domain Socket Connection less a 3rd party library
+def write_string_to_socket(connection, message):
+    connection.send(message)
+
+def read_string_from_socket(connection):
+    return connection.recv(1024) #1024 = bufsize
+#For best match with hardware and network realities, the value of bufsize should be a relatively small power of 2, for example, 4096
+#https://docs.python.org/2/library/socket.html
+
+def process_client_connection(connection):
+    while True:
+        # read message 
+        message = read_string_from_socket(connection)
+
+        print "Message received = ", message
+        sys.stdout.flush() #Clear stdout
+       
+        if message == "END":
+            break
+        write_string_to_socket(connection, message)
