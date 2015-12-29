@@ -1,0 +1,9 @@
+#!usr/bin/bash
+#Notes on shabang: http://unix.stackexchange.com/questions/29608/why-is-it-better-to-use-usr-bin-env-name-instead-of-path-to-name-as-my/29620#29620
+#Note: In scripting $(()) is preferable since it avoids a fork/execute for the expr command.
+read x
+read y
+echo $(($x+$y))
+echo $(($x-$y))
+echo $(($x*$y))
+echo $(($x/$y))

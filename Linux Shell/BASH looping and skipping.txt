@@ -1,0 +1,8 @@
+#!/bin/bash
+#http://www.panix.com/~elflord/unix/bash-tute.html (Quick guide)
+#http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html (reading input)
+#http://www.cyberciti.biz/faq/bash-for-loop/ 
+for i in {1..99..2}
+  do
+     echo "$i"
+ done
