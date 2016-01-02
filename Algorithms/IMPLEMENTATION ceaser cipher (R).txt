@@ -1,0 +1,32 @@
+#The first line contains an integer, N, which is the length of the unencrypted string. 
+#The second line contains the unencrypted string, S. 
+#The third line contains the integer encryption key, K, which is the number of letters to rotate.
+
+# x = "stdin"
+enCRYPTER <- function(x){
+    f <- file(x)
+    dat <- readLines(f)
+    string <- as.character(strsplit(dat[length(dat)-1], '')[[1]])
+    k <- as.numeric(dat[length(dat)])
+    dictLower <- c(letters, letters, letters, letters, letters)
+    dictUpper <- c(LETTERS, LETTERS, LETTERS, LETTERS, LETTERS)
+    i = 1
+    tmp <- vector()
+    while(i <= length(string)){
+        if (string[i] %in% letters){
+            tmp[i] <- dictLower[as.numeric(which(string[i] == letters[1:length(letters)]))+k]
+            
+            i <- i + 1
+        } else if (string[i] %in% LETTERS){
+            tmp[i] <- dictUpper[as.numeric(which(string[i] == LETTERS[1:length(LETTERS)]))+k]
+            
+            i <- i + 1
+        } else {
+            tmp[i] <- string[i]
+            i <- i + 1
+        }
+    }
+    return(cat(tmp, sep=''))
+}
+
+enCRYPTER("stdin")
