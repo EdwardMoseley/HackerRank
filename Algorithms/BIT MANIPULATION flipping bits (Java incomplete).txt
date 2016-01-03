@@ -1,5 +1,9 @@
 import java.io.*;
 import java.util.*;
+
+//Note: ‘~’
+//https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html
+
 public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); //Create scanner to accept standard input

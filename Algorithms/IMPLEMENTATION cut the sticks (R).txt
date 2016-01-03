@@ -1,0 +1,25 @@
+## ###
+# ##Input Format 
+#The first line contains a single integer N. 
+#The next line contains N integers: a0, a1,...aN-1 separated by space, where ai represents the length of ith stick.
+#
+# ##Output Format 
+#For each operation, print the number of sticks that are cut, on separate lines.
+## ###
+
+#x="stdin"
+cutTheSticks <- function(x){
+    f <- readLines(file(x))
+    dat <- as.numeric(strsplit(f[2], ' ')[[1]])
+    cat(length(dat),"\n",sep='')
+    while (length(dat) > 0){
+        dat <- dat - min(dat)
+        dat[(dat <= 0)] <- NA   
+        dat <- na.omit(dat)
+        if (length(dat) != 0){
+            cat(length(dat),"\n", sep = '')
+        }
+    }
+}
+
+cutTheSticks("stdin")
