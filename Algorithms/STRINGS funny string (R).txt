@@ -1,0 +1,38 @@
+#Problem Statement
+
+#Suppose you have a string S that has the length N. It is indexed from 0 to N−1. String R is the reverse of string S. The string S is funny if the condition |Si−Si−1|=|Ri−Ri−1| is true for every i from 1 to N−1.
+
+#Note: Given a string str, stri denotes the ascii value of the ith character (0-indexed) of str. Here, |x| denotes the absolute value of an integer x.
+
+
+#x <- "stdin"
+funnyString <- function(x){
+    dat <- readLines(file(x))
+    dat <- dat[2:length(dat)]
+    for (i in 1:length(dat)){
+   #print("new loop")
+        tmpList <- as.character(strsplit(dat[i], '')[[1]])
+        j <- 0
+        bool <- TRUE
+        while(bool){
+            s <- abs(which(tmpList[1+j] == letters)-which(tmpList[2+j] == letters))
+            #print(s)
+            r <- abs(which(tmpList[length(tmpList)-j] == letters)-which(tmpList[length(tmpList)-j-1] == letters))
+            #print(r)
+            #print(r==s)
+            if (r == s && !is.null(r) && !is.null(s) && length(r) != 0){#fix this
+                j <- j + 1
+                #print("incremented")
+            } else if (length(r) == 0 && length(s) == 0){
+                cat("Funny\n")
+                bool <- FALSE
+            } else {
+                cat("Not Funny\n")
+                bool <- FALSE
+            }
+        }
+    #print("out of the loop")
+    }
+}
+
+funnyString("stdin")
