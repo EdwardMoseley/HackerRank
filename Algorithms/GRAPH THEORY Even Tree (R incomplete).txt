@@ -1,0 +1,34 @@
+#Input Format 
+# The first line of input contains two integers N and M. N is the number of vertices and M is the number of edges. 
+# The next M lines contain two integers ui and vi which specifies an edge of the tree. (1-based index)
+#Output Format 
+# Print the answer, a single integer.
+#Constraints 
+# 2 <= N <= 100.
+
+# list <- nodes (unique node values)
+# for each input
+## Account for duplicates
+# attempt to trim forest until
+# all(length(node) % 2 == 0)
+
+f <- readLines(file("stdin"))
+dat <- strsplit(f, ' ')#Split between spaces
+nodes <- unique(unlist(dat))
+tmp <- list()
+for (i in 1:length(nodes)){
+    tmp[[i]] <- nodes[i]
+}
+##tmp
+##which(tmp == 4)##This will find represented nodes
+#dat
+#tmp
+for (i in 0:length(tmp)){
+    j <- 0
+    while (length(dat) > 1){
+        if (dat[[i]] %in% tmp){
+            which(tmp == dat[[i]][length(dat[[i]])+1]) <- dat[[i]]##Something like this...
+        }
+        dat <- dat[[i+1]]
+    }
+}
