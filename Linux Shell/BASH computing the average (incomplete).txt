@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#read n
+#i = 0
+#j = 0
+
+#while [[ $i -lt $n ]]
+#        do
+#        read $tmp
+#        $j = $j + $tmp
+#        (( i++ ))
+#        [ $i -eq $n ] #&& continue
+#        echo $j
+#done
+
+loop=true
+read n
+while $loop
+    do
+        read || loop=false
+        #do the maths here and note that 0 is returned at the EOF
+        printf "%.3f %n" $(echo "$REPLY" | bc -l)
+done
+#printf "%.3f" $(echo "$PLACEHOLDERVALUE" | bc -l)
