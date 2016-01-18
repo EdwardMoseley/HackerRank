@@ -1,24 +1,10 @@
-#!/bin/bash
-
-#read n
-#i = 0
-#j = 0
-
-#while [[ $i -lt $n ]]
-#        do
-#        read $tmp
-#        $j = $j + $tmp
-#        (( i++ ))
-#        [ $i -eq $n ] #&& continue
-#        echo $j
-#done
-
-loop=true
+declare -i x=0
 read n
+loop=true
 while $loop
     do
         read || loop=false
-        #do the maths here and note that 0 is returned at the EOF
-        printf "%.3f %n" $(echo "$REPLY" | bc -l)
+        x=$(( x + REPLY ))
 done
-#printf "%.3f" $(echo "$PLACEHOLDERVALUE" | bc -l)
+#Note: wrong answer, need to maintain remainder
+printf "%.3f" $(echo "scale=3; $(( $x/$n ))" | bc -l)
