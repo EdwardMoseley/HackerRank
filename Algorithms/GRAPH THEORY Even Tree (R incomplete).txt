@@ -1,3 +1,9 @@
+###
+#Note: code this in C++ as a challenge, and a 1D array 
+#should be sufficient, as a matrix results in a point of symmetry
+#and can be collapsed
+
+
 #Input Format 
 # The first line of input contains two integers N and M. N is the number of vertices and M is the number of edges. 
 # The next M lines contain two integers ui and vi which specifies an edge of the tree. (1-based index)
