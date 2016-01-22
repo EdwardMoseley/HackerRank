@@ -1,0 +1,28 @@
+//https://www.hackerrank.com/challenges/c-tutorial-for-loop
+//Input
+//8
+//11
+//Output
+//eight
+//nine
+//even
+//odd
+#include <iostream>
+#include <cstdio>
+using namespace std;
+//Note: [a,b]  represents the interval, i.e., [a,b]={x∈Z| a≤x≤b}={a, a+1,…,b} 
+
+int main(){
+    int a;
+    int b;
+    cin >> a;
+    cin >> b;
+    int nDict[10] = {1,2,3,4,5,6,7,8,9,10};
+    string eoDict[2] = {"Even", "Odd"};
+    string sDict[10] = {};
+    for (int i = a; i < b; i++){
+        printf("%d\n", i);
+    }
+   
+    return 0;
+}
