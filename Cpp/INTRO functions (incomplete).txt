@@ -2,6 +2,7 @@
 #include <cstdio>
 using namespace std;
 
+//write function prior to calling
 //int max_of_four(int a, int b, int c, int d);
 
 int main() {
