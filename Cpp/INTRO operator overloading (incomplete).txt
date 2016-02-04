@@ -5,6 +5,8 @@
 #include <algorithm>
 using namespace std;
 
+//Create class “Matrix” that satisfies the following code:
+
 int main () {
    int cases,k;
    cin >> cases;
