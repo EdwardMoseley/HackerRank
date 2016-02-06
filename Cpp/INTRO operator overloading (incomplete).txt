@@ -7,6 +7,13 @@ using namespace std;
 
 //Create class “Matrix” that satisfies the following code:
 
+class Matrix{ 
+    public:
+             vector<vector<int>>a;
+             Matrix operator+(const Matrix& a);
+             //pointers...
+};
+
 int main () {
    int cases,k;
    cin >> cases;
