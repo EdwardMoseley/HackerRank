@@ -12,6 +12,7 @@ class Matrix{
              vector<vector<int>>a;
              Matrix operator+(const Matrix& a);
              //pointers...
+
 };
 
 int main () {
