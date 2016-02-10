@@ -1,15 +1,14 @@
-f <- file("stdin")#Read in input
 
-dat <- readLines(f)
 
+dat <- readLines(file("stdin"))
 n <- as.numeric(dat[1])
 
 dat <- strsplit(dat[2:length(dat)], '')
 
 grid <- matrix(rep(0, each = n*n), n, n)
 
-for (i in 1:n){
-    for (j in 1:n){
+for (i in 1:n){#1st for loop (the x direction)
+    for (j in 1:n){#2nd for loop (the y direction)
         #print("Inc...")
         if (as.character(dat[[i]][j]) == "p"){
             grid[i,j] <- grid[i,j] + n
@@ -19,6 +18,17 @@ for (i in 1:n){
     }
 }
 
+#2nd for loop to create a numeric system for the 2D matrix (like sequence alignment)
+#for (i in 1:n){
+#    for (j in 1:n){
+#    if (as.numeric(grid[i,j]) < grid[])
+#    }
+#}
 
-
+#Create another loop to find the way to the princess
 grid
+
+#      [,1] [,2] [,3]
+#[1,]    0    0    3
+#[2,]    0   -1    0
+#[3,]    0    0    0
