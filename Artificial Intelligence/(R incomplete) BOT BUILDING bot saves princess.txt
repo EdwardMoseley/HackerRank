@@ -1,13 +1,9 @@
 dat <- readLines(file("stdin"))
 n <- as.numeric(dat[1])
-
 dat <- strsplit(dat[2:length(dat)], '')
-
 grid <- matrix(rep(0, each = n*n), n, n)
-
 for (i in 1:n){#1st for loop (the x direction)
     for (j in 1:n){#2nd for loop (the y direction)
-        #print("Inc...")
         if (as.character(dat[[i]][j]) == "p"){
             grid[i,j] <- grid[i,j] + n
         } else if (as.character(dat[[i]][j]) == "m"){
@@ -15,21 +11,20 @@ for (i in 1:n){#1st for loop (the x direction)
         }
     }
 }
+peach <- which(max(grid))#This may not work, may need to go through each element brute force
+mario <- which(min(grid))##ibid
+#Directions!
 
-#2nd for loop to create a numeric system for the 2D matrix (like sequence alignment)
-#for (i in 1:n){
-#    for (j in 1:n){
-#    if (as.numeric(grid[i,j]) < grid[i+1,j]){
-#        } else if (as.numeric(grid[i,j] < grid[i,j+1])){
-#         
-#        } else if (as.numeric(grid[i,j] < grid[i-1,j])){
-#         
-#        } else if (as.numeric(grid[i,j] < grid[i, j-1])){
-#         
-#        } else if (){
-#	 }
-#    }
-#}
-
-#Create another loop to find the way to the princess
-grid
+while (peach != mario){
+ #Let's start with left/right
+ if (mario < grid[i,j]){
+  mario <- grid[i+1,j]
+  cat("RIGHT")
+ } else {
+  mario <- grid[i-1,j]
+  cat("LEFT")
+ }
+ #Grab a hold of mario's numeric position
+ if (as.numeric(mario) < as.numeric())
+ #Then up/down
+}
