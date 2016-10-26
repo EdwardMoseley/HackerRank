@@ -1,0 +1,68 @@
+/*
+Given a string, find out the lexicographically smallest and largest substring of length k.
+
+[Note: Lexicographic order is also known as alphabetic order dictionary order. So "ball" is smaller than "cat", "dog" is smaller than "dorm". Capital letter always comes before smaller letter, so "Happy" is smaller than "happy" and "Zoo" is smaller than "ball".]
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        //initialize scanner
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        //grab substring size
+        int n = sc.nextInt();
+
+        //initialize a temp variable, save extra calculations
+        String tmp;
+
+        //generate an array to store the substrings
+        String[] store = new String[str.length()-n+1];
+      
+        //generate substrings
+        int i = 0;
+        while (i <= str.length()-n){
+            tmp = str.substring(i,i+n);
+            if (tmp.length() >= n){
+                store[i] = tmp;
+            }
+            i++;
+        }
+        
+        //find highest lexicographical substring
+        int j = 0;
+        tmp = store[j];
+        while (j < store.length){
+            if (tmp.compareTo(store[j]) > 0){
+                tmp = store[j];
+                j++;
+            } else {
+                j++;
+            }
+        }
+
+        //output high
+        System.out.println(tmp);
+
+        //find lowest lexicographical substring
+        j = 0;
+        tmp = store[j];
+        while (j < store.length){
+            if (tmp.compareTo(store[j]) < 0){
+                tmp = store[j];
+                j++;
+            } else {
+                j++;
+            }
+        }
+        //output low
+        System.out.println(tmp);
+    }
+}
